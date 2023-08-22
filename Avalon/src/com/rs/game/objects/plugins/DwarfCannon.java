@@ -1,6 +1,7 @@
 package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.content.DwarfMultiCannon;
@@ -8,9 +9,16 @@ import com.rs.game.player.content.DwarfMultiCannon;
 public class DwarfCannon extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 6, 7, 8, 9 };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(6, -1, -1, 0),
+				new ObjectKey(7, -1, -1, 0),
+				new ObjectKey(8, -1, -1, 0),
+				new ObjectKey(9, -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

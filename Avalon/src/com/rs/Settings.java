@@ -9,7 +9,7 @@ public final class Settings {
 	/**
 	 * Launching settings
 	 */
-	public static boolean DEBUG;
+	public static boolean DEBUG = true;
 	public static boolean HOSTED;
 	public static int PORT_ID;
 	public static boolean VPS_HOSTED;
@@ -163,7 +163,7 @@ public final class Settings {
 			13887, 13890, 13893, 13896, 13899, 13902, 13905, 14484, 19784, 11694, 13738, 13740, 13742, 13744, 15017,
 			15018, 15019, 15020, 15220, 23659, 6570 };
 	
-	public static final String[] DEVELOPERS = { "starter", "bank", "andreas", "manager", "zed"};
+	public static final String[] DEVELOPERS = { "sam"};
 	
 	public static final String[] MODERATORS = {};
 	

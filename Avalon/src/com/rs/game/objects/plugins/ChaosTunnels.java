@@ -2,15 +2,22 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class ChaosTunnels extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 77745, 28779, 29537};
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(77745, -1, -1, 0),
+				new ObjectKey(28779, -1, -1, 0),
+				new ObjectKey(29537, -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

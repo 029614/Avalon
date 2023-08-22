@@ -1,15 +1,26 @@
 package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class DominionTower extends ObjectPlugin {
 
     @Override
-    public Object[] getKeys() {
-        return new Object[]{ 62675, 62681, 62678, 62679, 62688, 62677, 62680 };
+    public ObjectKey[] getKeys() {
+        ObjectKey[] keys = {
+                new ObjectKey(62675, -1, -1, 0),
+                new ObjectKey(62677, -1, -1, 0),
+                new ObjectKey(62678, -1, -1, 0),
+                new ObjectKey(62679, -1, -1, 0),
+                new ObjectKey(62680, -1, -1, 0),
+                new ObjectKey(62681, -1, -1, 0),
+                new ObjectKey(62688, -1, -1, 0)
+        };
+        return keys;
     }
+
 
     @Override
     public boolean processObject(Player player, WorldObject object) {

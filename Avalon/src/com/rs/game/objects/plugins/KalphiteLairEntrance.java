@@ -3,15 +3,21 @@ package com.rs.game.objects.plugins;
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
 import com.rs.game.item.Item;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class KalphiteLairEntrance extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 48802, 48803 };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(48802, -1, -1, 0),
+				new ObjectKey(48803, -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

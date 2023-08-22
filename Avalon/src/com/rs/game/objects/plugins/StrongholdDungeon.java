@@ -3,18 +3,47 @@ package com.rs.game.objects.plugins;
 import com.rs.game.Animation;
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class StrongholdDungeon extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 16149, 16080, 16148, 16154, 16078, 16081, 16114, 16115, 16049, 16112, 16048, 16150, 16082, 16116, 16050,
-			16043 ,16044 ,16065 ,16066 ,16089 ,16090 ,16124 ,16123,16135, 16077, 16118, 16047
-	};
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(16149, -1, -1, 0),
+				new ObjectKey(16080, -1, -1, 0),
+				new ObjectKey(16148, -1, -1, 0),
+				new ObjectKey(16154, -1, -1, 0),
+				new ObjectKey(16078, -1, -1, 0),
+				new ObjectKey(16081, -1, -1, 0),
+				new ObjectKey(16114, -1, -1, 0),
+				new ObjectKey(16115, -1, -1, 0),
+				new ObjectKey(16049, -1, -1, 0),
+				new ObjectKey(16112, -1, -1, 0),
+				new ObjectKey(16048, -1, -1, 0),
+				new ObjectKey(16150, -1, -1, 0),
+				new ObjectKey(16082, -1, -1, 0),
+				new ObjectKey(16116, -1, -1, 0),
+				new ObjectKey(16050, -1, -1, 0),
+				new ObjectKey(16043, -1, -1, 0),
+				new ObjectKey(16044, -1, -1, 0),
+				new ObjectKey(16065, -1, -1, 0),
+				new ObjectKey(16066, -1, -1, 0),
+				new ObjectKey(16089, -1, -1, 0),
+				new ObjectKey(16090, -1, -1, 0),
+				new ObjectKey(16124, -1, -1, 0),
+				new ObjectKey(16123, -1, -1, 0),
+				new ObjectKey(16135, -1, -1, 0),
+				new ObjectKey(16077, -1, -1, 0),
+				new ObjectKey(16118, -1, -1, 0),
+				new ObjectKey(16047, -1, -1, 0)
+		};
+		return keys;
 	}
-	
+
+
 	@Override
 	public boolean processObject(Player player, WorldObject object) {
 		int id = object.getId();

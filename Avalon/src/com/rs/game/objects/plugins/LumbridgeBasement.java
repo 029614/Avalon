@@ -2,15 +2,21 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class LumbridgeBasement extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 36687, 29355 };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(36687, -1, -1, 0),
+				new ObjectKey(29355, -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

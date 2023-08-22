@@ -3,15 +3,23 @@ package com.rs.game.objects.plugins;
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
 import com.rs.game.item.Item;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class SaradominShortcuts extends ObjectPlugin {
 
+
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 26445, 26298, 26444 };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(26445, -1, -1, 0),
+				new ObjectKey(26298, -1, -1, 0),
+				new ObjectKey(26444, -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

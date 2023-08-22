@@ -2,6 +2,7 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.content.FadingScreen;
@@ -11,8 +12,11 @@ import com.rs.game.tasks.WorldTasksManager;
 public class ZMIShortcut extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 26844, 26845 };
+	public ObjectKey[] getKeys() {
+		return new ObjectKey[]{
+				new ObjectKey(26844, -1, -1, 0),
+				new ObjectKey(26845, -1, -1, 0)
+		};
 	}
 
 	@Override

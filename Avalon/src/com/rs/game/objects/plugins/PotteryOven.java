@@ -2,16 +2,22 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.item.Item;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.actions.skills.smithing.JewllerySmithing;
 
 public class PotteryOven extends ObjectPlugin {
-
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 2643, 11601, "Pottery Oven" };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(2643, -1, -1, 0),
+				new ObjectKey(11601, -1, -1, 0),
+				new ObjectKey("Pottery Oven", -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public int getDistance() {

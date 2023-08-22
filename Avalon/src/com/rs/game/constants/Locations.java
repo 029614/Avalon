@@ -1,7 +1,6 @@
 package com.rs.game.constants;
 
 import com.rs.game.WorldTile;
-import com.rs.game.constants.objects.*;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -4,6 +4,7 @@ import com.rs.game.Animation;
 import com.rs.game.ForceMovement;
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.Skills;
@@ -16,8 +17,24 @@ import com.rs.net.decoders.handlers.InventoryOptionsHandler;
 public class WildernessOthers extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 42611, 65621, 65620, 65619, 65618, 65617, 65616, 27254, 12202, 12230, 15522, 38811, 37929, 37928, 38815 };
+	public ObjectKey[] getKeys() {
+		return new ObjectKey[] {
+				new ObjectKey(42611, -1, -1, 0),
+				new ObjectKey(65621, -1, -1, 0),
+				new ObjectKey(65620, -1, -1, 0),
+				new ObjectKey(65619, -1, -1, 0),
+				new ObjectKey(65618, -1, -1, 0),
+				new ObjectKey(65617, -1, -1, 0),
+				new ObjectKey(65616, -1, -1, 0),
+				new ObjectKey(27254, -1, -1, 0),
+				new ObjectKey(12202, -1, -1, 0),
+				new ObjectKey(12230, -1, -1, 0),
+				new ObjectKey(15522, -1, -1, 0),
+				new ObjectKey(38811, -1, -1, 0),
+				new ObjectKey(37929, -1, -1, 0),
+				new ObjectKey(37928, -1, -1, 0),
+				new ObjectKey(38815, -1, -1, 0)
+		};
 	}
 	
 	@Override

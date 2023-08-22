@@ -2,6 +2,7 @@ package com.rs.game.objects.plugins;
 
 import com.rs.cache.loaders.ObjectDefinitions;
 import com.rs.game.WorldObject;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.actions.skills.woodcutting.Woodcutting;
@@ -11,9 +12,25 @@ import com.rs.game.player.actions.skills.woodcutting.Woodcutting.TreeDefinitions
 public class WoodcuttingObjects extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { "vines", "tree", "evergreen", "dead tree", "swamp tree", "oak", "willow", "maple tree", "raple tree", "yew", "magic tree", "cursed magic tree", "bloodwood tree", "achey tree" };
-	}
+	public ObjectKey[] getKeys() {
+		ObjectKey[] objectKeys = new ObjectKey[] {
+				new ObjectKey("vines", -1, -1, 0),
+				new ObjectKey("tree", -1, -1, 0),
+				new ObjectKey("evergreen", -1, -1, 0),
+				new ObjectKey("dead tree", -1, -1, 0),
+				new ObjectKey("swamp tree", -1, -1, 0),
+				new ObjectKey("oak", -1, -1, 0),
+				new ObjectKey("willow", -1, -1, 0),
+				new ObjectKey("maple tree", -1, -1, 0),
+				new ObjectKey("raple tree", -1, -1, 0),
+				new ObjectKey("yew", -1, -1, 0),
+				new ObjectKey("magic tree", -1, -1, 0),
+				new ObjectKey("cursed magic tree", -1, -1, 0),
+				new ObjectKey("bloodwood tree", -1, -1, 0),
+				new ObjectKey("achey tree", -1, -1, 0)
+		};
+        return objectKeys;
+    }
 
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

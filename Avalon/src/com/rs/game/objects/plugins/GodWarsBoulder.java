@@ -4,6 +4,7 @@ import com.rs.game.Hit;
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
 import com.rs.game.Hit.HitLook;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.Skills;
@@ -12,9 +13,15 @@ import com.rs.utils.Utils;
 public class GodWarsBoulder extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 35390, null };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(35390, -1, -1, 0),
+				//TODO: find out what the hell null is doing here.
+				null // Legacy entry, left in because I'm not sure if it's important.
+		};
+		return keys;
 	}
+
 
 	@Override
 	public int getDistance() {

@@ -5,6 +5,7 @@ import java.util.TimerTask;
 import com.rs.cores.CoresManager;
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.actions.combat.Magic;
@@ -12,9 +13,13 @@ import com.rs.game.player.actions.combat.Magic;
 public class MagicDoorLumbridge extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 2406 };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(2406, -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public int getDistance() {

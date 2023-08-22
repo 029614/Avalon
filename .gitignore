@@ -45,6 +45,7 @@ Avalon/out/
 Client/out/
 Avalon/data/tools/information/scripts/
 Avalon/src/com/rs/net/sql/
+Avalon/data/cache
 *.dat2
 *.idx255
 *.txt

@@ -1,6 +1,7 @@
 package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.utils.ShopsHandler;
@@ -8,13 +9,10 @@ import com.rs.utils.ShopsHandler;
 public class CulinaromancerChest extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 12309 };
-	}
-
-	@Override
-	public int getDistance() {
-		return 0;
+	public ObjectKey[] getKeys() {
+		return new ObjectKey[] {
+				new ObjectKey(12309, -1, -1, 0)
+		};
 	}
 
 	@Override
@@ -22,13 +20,13 @@ public class CulinaromancerChest extends ObjectPlugin {
 		player.getBank().openBank();
 		return true;
 	}
-	
+
 	@Override
 	public boolean processObject2(Player player, WorldObject object) {
 		ShopsHandler.openShop(player, 34);
 		return true;
 	}
-	
+
 	@Override
 	public boolean processObject3(Player player, WorldObject object) {
 		ShopsHandler.openShop(player, 34);

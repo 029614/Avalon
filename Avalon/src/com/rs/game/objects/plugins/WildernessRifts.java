@@ -2,15 +2,21 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
-public class WildernessRifts extends ObjectPlugin {
+public class WildernessRifts extends ObjectPlugin {@Override
 
-	@Override
-	public Object[] getKeys() {
-		return new Object[] { 65203, 28782, 20602, 20604};
-	}
+
+public ObjectKey[] getKeys() {
+	return new ObjectKey[] {
+			new ObjectKey(65203, -1, -1, 0),
+			new ObjectKey(28782, -1, -1, 0),
+			new ObjectKey(20602, -1, -1, 0),
+			new ObjectKey(20604, -1, -1, 0)
+	};
+}
 
 	@Override
 	public int getDistance() {

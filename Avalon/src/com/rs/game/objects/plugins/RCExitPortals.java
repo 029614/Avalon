@@ -2,18 +2,45 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 import com.rs.game.player.controlers.EdgevillePvPControler;
 
 public class RCExitPortals extends ObjectPlugin {
 
+
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 2465, 2466, 2467, 2468, 2469, 2470, 2471, 2472, 2743, 2474, 2475, 2477,
-				7133, 7132, 7141, 7129, 7130, 7131, 7140, 7139, 7137, 7136, 7135, 7134
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(2465, -1, -1, 0),
+				new ObjectKey(2466, -1, -1, 0),
+				new ObjectKey(2467, -1, -1, 0),
+				new ObjectKey(2468, -1, -1, 0),
+				new ObjectKey(2469, -1, -1, 0),
+				new ObjectKey(2470, -1, -1, 0),
+				new ObjectKey(2471, -1, -1, 0),
+				new ObjectKey(2472, -1, -1, 0),
+				new ObjectKey(2743, -1, -1, 0),
+				new ObjectKey(2474, -1, -1, 0),
+				new ObjectKey(2475, -1, -1, 0),
+				new ObjectKey(2477, -1, -1, 0),
+				new ObjectKey(7133, -1, -1, 0),
+				new ObjectKey(7132, -1, -1, 0),
+				new ObjectKey(7141, -1, -1, 0),
+				new ObjectKey(7129, -1, -1, 0),
+				new ObjectKey(7130, -1, -1, 0),
+				new ObjectKey(7131, -1, -1, 0),
+				new ObjectKey(7140, -1, -1, 0),
+				new ObjectKey(7139, -1, -1, 0),
+				new ObjectKey(7137, -1, -1, 0),
+				new ObjectKey(7136, -1, -1, 0),
+				new ObjectKey(7135, -1, -1, 0),
+				new ObjectKey(7134, -1, -1, 0)
 		};
+		return keys;
 	}
+
 	
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

@@ -1,15 +1,21 @@
 package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class CruicibleHatch extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 67051, "Hatch" };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(67051, -1, -1, 0),
+				new ObjectKey("Hatch", -1, -1, 0)
+		};
+		return keys;
 	}
+
 
 	@Override
 	public int getDistance() {

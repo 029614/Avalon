@@ -1,5 +1,7 @@
 package com.rs.game.npc;
 
+/*
+
 import com.rs.game.WorldObject;
 import com.rs.game.npc.NpcScript;
 import com.rs.utils.Logger;
@@ -59,4 +61,4 @@ public class NpcScriptHandler {
 			Logger.handle(e);
 		}
 	}
-}
+}*/

@@ -2,15 +2,26 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class GrotwormDungeon extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 70794, 70796, 70795, 70799, 70796, 70797, 70798, 70793 };
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(70793, -1, -1, 0),
+				new ObjectKey(70794, -1, -1, 0),
+				new ObjectKey(70795, -1, -1, 0),
+				new ObjectKey(70796, -1, -1, 0),
+				new ObjectKey(70797, -1, -1, 0),
+				new ObjectKey(70798, -1, -1, 0),
+				new ObjectKey(70799, -1, -1, 0)
+		};
+		return keys;
 	}
+
 	
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

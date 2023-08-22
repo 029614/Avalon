@@ -2,15 +2,26 @@ package com.rs.game.objects.plugins;
 
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.player.Player;
 
 public class Karamja extends ObjectPlugin {
 
 	@Override
-	public Object[] getKeys() {
-		return new Object[] { 2083, 2081, 492, 1764, 2606, 25213, 25154};
+	public ObjectKey[] getKeys() {
+		ObjectKey[] keys = {
+				new ObjectKey(2083, -1, -1, 0),
+				new ObjectKey(2081, -1, -1, 0),
+				new ObjectKey(492, -1, -1, 0),
+				new ObjectKey(1764, -1, -1, 0),
+				new ObjectKey(2606, -1, -1, 0),
+				new ObjectKey(25213, -1, -1, 0),
+				new ObjectKey(25154, -1, -1, 0)
+		};
+		return keys;
 	}
+
 	
 	@Override
 	public boolean processObject(Player player, WorldObject object) {

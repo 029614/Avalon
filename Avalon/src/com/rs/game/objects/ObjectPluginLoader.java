@@ -11,26 +11,35 @@ import java.util.Set;
 public class ObjectPluginLoader {
 
 	public static final HashMap<Object, ObjectPlugin> cachedObjectPlugins = new HashMap<Object, ObjectPlugin>();
-
 	public static ObjectPlugin getPlugin(WorldObject object) {
+		int x = object.getX();
+		int y = object.getY();
+		int plane = object.getPlane();
+
 		ObjectPlugin plugin = cachedObjectPlugins.getOrDefault(object.getId(), cachedObjectPlugins.get(object.getName()));
+
 		if (plugin != null) {
-			System.out.println("[ObjectPluginLoader] "+object.getName()+"("+object.getId()+"): plugin was found by Id.");
+			System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): plugin was found by Id.");
 			return plugin;
 		}
+
 		if (plugin == null) {
 			for (Map.Entry<Object, ObjectPlugin> entry : cachedObjectPlugins.entrySet()) {
 				Object[] keys = entry.getValue().getKeys();
 				for (Object key : keys) {
-					if (key instanceof String && object.getName().toLowerCase().contains(((String) key).toLowerCase())) {
-						plugin = entry.getValue();
-						System.out.println("[ObjectPluginLoader] "+object.getName()+"("+object.getId()+"): Found plugin by name");
-						return plugin;
+					if (key instanceof ObjectKey) {
+						ObjectKey objectKey = (ObjectKey) key;
+						if (objectKey.matches(object.getId(), x, y, plane)) {
+							plugin = entry.getValue();
+							System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): Found plugin by key.");
+							return plugin;
+						}
 					}
 				}
 			}
 		}
-		System.out.println("[ObjectPluginLoader] "+object.getName()+"("+object.getId()+"): Found no plugin for this object.");
+
+		System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): Found no plugin for this object.");
 		return null;
 	}
 
