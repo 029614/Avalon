@@ -20,7 +20,8 @@ public class ChaosTunnels extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int x = object.getX();
 		int y = object.getY();
 		if (object.getId() == 77745 || object.getId() == 28779 || object.getId() == 29537) {

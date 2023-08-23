@@ -45,7 +45,8 @@ public class StrongholdDungeon extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 16149) {
 			player.useStairs(827, new WorldTile(2042, 5245, 0), 1, 2);

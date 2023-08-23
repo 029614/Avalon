@@ -21,6 +21,7 @@ import com.rs.game.minigames.crucible.Crucible;
 import com.rs.game.minigames.fightpits.FightPits;
 import com.rs.game.minigames.pest.Lander;
 import com.rs.game.minigames.warriorguild.WarriorsGuild;
+import com.rs.game.objects.ObjectKey;
 import com.rs.game.objects.ObjectPlugin;
 import com.rs.game.objects.ObjectPluginLoader;
 import com.rs.game.objects.plugins.DoorsAndGates;
@@ -56,6 +57,7 @@ import com.rs.game.player.actions.skills.mining.EssenceMining.EssenceDefinitions
 import com.rs.game.player.actions.skills.mining.LavaFlowMine;
 import com.rs.game.player.actions.skills.mining.MiningBase;
 import com.rs.game.player.actions.skills.newmining.Mining;
+import com.rs.game.player.actions.skills.prayer.Burying;
 import com.rs.game.player.actions.skills.prayer.Burying.Bone;
 import com.rs.game.player.actions.skills.runecrafting.AbbysObsticals;
 import com.rs.game.player.actions.skills.runecrafting.CombinationRunes;
@@ -94,6 +96,7 @@ import com.rs.utils.Utils;
  */
 
 public final class ObjectHandler {
+
 
     private ObjectHandler() {
 
@@ -171,6 +174,7 @@ public final class ObjectHandler {
     }
 
     private static void handleOption1(final Player player, final WorldObject object, InputStream stream) {
+        final ObjectKey key = new ObjectKey(object.getId(), object.getX(), object.getY(), object.getPlane());
         final ObjectDefinitions objectDef = object.getDefinitions();
         final int id = object.getId();
         final int x = object.getX();
@@ -183,7 +187,7 @@ public final class ObjectHandler {
                 public void run() {
                     player.stopAll();
                     player.faceObject(object);
-                    boolean pluginExecuted = plugin.processObject(player, object);
+                    boolean pluginExecuted = plugin.processObject(player, key);
                     if (!pluginExecuted)
                         Logger.log("ObjectPlugin;Option 1", "Class: " + plugin.getClass().getSimpleName() + ".java, Option 1 method was empty in plugin.");
                     if (pluginExecuted) {
@@ -1642,7 +1646,7 @@ public final class ObjectHandler {
                     public void run() {
                         player.stopAll();
                         player.faceObject(object);
-                        boolean pluginExecuted = plugin.processObject2(player, object);
+                        boolean pluginExecuted = plugin.processObject2(player, new ObjectKey(object.getId(), object.getX(), object.getY(), object.getPlane()));
                         if (!pluginExecuted)
                             Logger.log("ObjectPlugin;Option 2", "Class: " + plugin.getClass().getSimpleName() + ".java, Option 2 method was empty in plugin.");
                         if (pluginExecuted) {
@@ -1815,7 +1819,7 @@ public final class ObjectHandler {
                     public void run() {
                         player.stopAll();
                         player.faceObject(object);
-                        boolean pluginExecuted = plugin.processObject3(player, object);
+                        boolean pluginExecuted = plugin.processObject3(player, new ObjectKey(object.getId(), object.getX(), object.getY(), object.getPlane()));
                         if (!pluginExecuted)
                             Logger.log("ObjectPlugin;Option 3", "Class: " + plugin.getClass().getSimpleName() + ".java, Option 3 method was empty in plugin.");
                         if (pluginExecuted) {
@@ -1907,7 +1911,7 @@ public final class ObjectHandler {
                     public void run() {
                         player.stopAll();
                         player.faceObject(object);
-                        boolean pluginExecuted = plugin.processObject4(player, object);
+                        boolean pluginExecuted = plugin.processObject4(player, new ObjectKey(object.getId(), object.getX(), object.getY(), object.getPlane()));
                         if (!pluginExecuted)
                             Logger.log("ObjectPlugin;Option 4", "Class: " + plugin.getClass().getSimpleName() + ".java, Option 4 method was empty in plugin.");
                         if (pluginExecuted) {
@@ -1961,7 +1965,7 @@ public final class ObjectHandler {
                     public void run() {
                         player.stopAll();
                         player.faceObject(object);
-                        boolean pluginExecuted = plugin.processObject5(player, object);
+                        boolean pluginExecuted = plugin.processObject5(player, new ObjectKey(object.getId(), object.getX(), object.getY(), object.getPlane()));
                         if (!pluginExecuted)
                             Logger.log("ObjectPlugin;Option 5", "Class: " + plugin.getClass().getSimpleName() + ".java, Option 5 method was empty in plugin.");
                         if (pluginExecuted) {
@@ -2064,18 +2068,25 @@ public final class ObjectHandler {
                 player.setRouteEvent(new RouteEvent(object, new Runnable() {
                     @Override
                     public void run() {
+                        Logger.log("ObjectPlugin;ItemOnObject", "the RouteEvent is running. thats good.");
                         player.stopAll();
                         player.faceObject(object);
-                        boolean pluginExecuted = plugin.processItemOnObject(player, object, item);
+                        boolean pluginExecuted = plugin.processItemOnObject(player, new ObjectKey(object.getId(), object.getX(), object.getY(), object.getPlane()), item);
                         if (!pluginExecuted)
                             Logger.log("ObjectPlugin;ItemOnObject", "Class: " + plugin.getClass().getSimpleName() + ".java, ItemOnObject method was empty in plugin.");
                         if (pluginExecuted) {
                             if (Settings.DEBUG)
                                 Logger.log("ObjectPlugin;ItemOnObject", "Class: " + plugin.getClass().getSimpleName() + ".java, Name of Object: " + object.getName() + ", ObjectId: " + object.getId() + ", Name of Item: " + item.getName() + ", ItemId: " + item.getId());
-                            return;
                         }
                     }
                 }, true));
+        }
+        if (object.getId() == 65371) { // Chaos Altar
+            Burying.Bone bone = Burying.Bone.forId(item.getId());
+            Logger.log("AltarPlugin:processItemOnObject", "processing " + item.getName() + " on " + object.getName());
+            if (bone != null) {
+                player.getActionManager().setAction(new BoneOffering(object, bone, 2));
+            }
         }
         if (item.getId() == 954 && object.getId() == 26342) {
         	player.getVarsManager().sendVarBit(3932, 1, true);

@@ -24,7 +24,8 @@ public class PottersWheel extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.getDialogueManager().startDialogue("PotterWheelD", object);
 		return true;
 	}

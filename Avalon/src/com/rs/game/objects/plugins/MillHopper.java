@@ -22,7 +22,8 @@ public class MillHopper extends ObjectPlugin {
 	private final int WHEAT = 1947;
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() == 67774) {
 			if (player.getTemporaryAttributtes().containsKey(("HOPPER_WHEAT" + object.getId()))) {
 				player.getPackets().sendGameMessage("You have already put down some wheat inside this hopper.");

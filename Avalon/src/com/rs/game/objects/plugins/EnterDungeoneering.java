@@ -17,7 +17,8 @@ public class EnterDungeoneering extends ObjectPlugin {
 
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.getDungManager().enterDungeon(true, false);
 		return true;
 	}

@@ -22,7 +22,8 @@ public class SaradominShortcuts extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (!player.getVarBitList().containsKey(3934)) {
 			player.message("You have to tie a rope around the rock.");
 			return false;
@@ -36,13 +37,15 @@ public class SaradominShortcuts extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.setNextWorldTile(new WorldTile(2919, 5273, 0));
 		return true;
 	}
 
 	@Override
-	public boolean processItemOnObject(Player player, WorldObject object, Item item) {
+	public boolean processItemOnObject(Player player, ObjectKey key, Item item) {
+		WorldObject object = super.getObject(key);
 		if (item.getId() != 954)
 			return false;
 		if (player.getVarBitList().containsKey(3934)) {

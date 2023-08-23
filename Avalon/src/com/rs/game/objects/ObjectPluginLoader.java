@@ -19,27 +19,33 @@ public class ObjectPluginLoader {
 		ObjectPlugin plugin = cachedObjectPlugins.getOrDefault(object.getId(), cachedObjectPlugins.get(object.getName()));
 
 		if (plugin != null) {
-			System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): plugin was found by Id.");
+			System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): plugin was found by Id. Plugin: " + plugin.getClass());
 			return plugin;
 		}
 
-		if (plugin == null) {
-			for (Map.Entry<Object, ObjectPlugin> entry : cachedObjectPlugins.entrySet()) {
-				Object[] keys = entry.getValue().getKeys();
-				for (Object key : keys) {
-					if (key instanceof ObjectKey) {
-						ObjectKey objectKey = (ObjectKey) key;
-						if (objectKey.matches(object.getId(), x, y, plane)) {
-							plugin = entry.getValue();
-							System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): Found plugin by key.");
-							return plugin;
-						}
-					}
-				}
-			}
-		}
+        ObjectPlugin fallback = null;
+        for (Map.Entry<Object, ObjectPlugin> entry : cachedObjectPlugins.entrySet()) {
+            Object[] keys = entry.getValue().getKeys();
+            for (Object key : keys) {
+                if (key instanceof ObjectKey) {
+                    ObjectKey objectKey = (ObjectKey) key;
+                    if (objectKey.matches(object.getId(), x, y, plane)) {
+                        plugin = entry.getValue();
+                        System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): Found plugin by key. Plugin: " + plugin.getClass());
+                        return plugin;
+                    } else if (objectKey.matches(object.getId())) {
+                        fallback = entry.getValue();
+                    } else if (objectKey.matches(object.getName())) {
+                        fallback = entry.getValue();
+                    }
+                }
+            }
+        }
+        if (fallback != null) {
+            return fallback;
+        }
 
-		System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): Found no plugin for this object.");
+        System.out.println("[ObjectPluginLoader] " + object.getName() + "(" + object.getId() + "): Found no plugin for this object.");
 		return null;
 	}
 

@@ -25,11 +25,48 @@ public class ObjectKey {
         this.plane = plane;
     }
 
+    public ObjectKey(String objectName) {
+        this.objectName = objectName;
+    }
+
+    public ObjectKey(int objectId) {
+        this.objectId = objectId;
+    }
+
     // Other methods like getters and matches method...
 
     public boolean matches(int objectId, int x, int y, int plane) {
         return (this.objectId == objectId || (this.objectName != null && this.objectName.equalsIgnoreCase(objectName)))
                 && this.x == x && this.y == y && this.plane == plane;
+    }
+
+    public boolean matches(int objectId) {
+        return this.objectId == objectId;
+    }
+
+    public boolean matches(String objectName) {
+        return this.objectName != null && this.objectName.equalsIgnoreCase(objectName);
+    }
+
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getPlane() {
+        return plane;
+    }
+
+    public int getId() {
+        return objectId;
+    }
+
+    public String getName() {
+        return objectName;
     }
 
 }

@@ -23,7 +23,8 @@ public class DominionTower extends ObjectPlugin {
 
 
     @Override
-    public boolean processObject(Player player, WorldObject object) {
+    public boolean processObject(Player player, ObjectKey key) {
+        WorldObject object = super.getObject(key);
         switch (object.getId()) {
             case 62675:
                 player.getCutscenesManager().play("DTPreview");
@@ -49,7 +50,8 @@ public class DominionTower extends ObjectPlugin {
     }
 
     @Override
-    public boolean processObject2(Player player, WorldObject object) {
+    public boolean processObject2(Player player, ObjectKey key) {
+        WorldObject object = super.getObject(key);
         switch (object.getId()) {
             case 62677:
                 player.getDominionTower().openRewards();

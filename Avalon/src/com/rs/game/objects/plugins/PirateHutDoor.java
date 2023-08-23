@@ -27,7 +27,8 @@ public class PirateHutDoor extends ObjectPlugin {
 	}
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (player.getY() >= 3955 && player.getY() <= 3957 && player.getX() >= 3043
 				&& player.getX() <= 3044) {
 			PirateHut.LeaveEastDoor(player, object);
@@ -53,7 +54,8 @@ public class PirateHutDoor extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (!player.getInventory().containsItem(1523, 1)) {
 			player.getDialogueManager().startDialogue("SimpleMessage",
 					"You need an Lockpick to picklock this gate.");

@@ -25,13 +25,15 @@ public class PotteryOven extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.getDialogueManager().startDialogue("PotterOvenD", object);
 		return true;
 	}
 	
 	@Override
-	public boolean processItemOnObject(Player player, WorldObject object, Item item) {
+	public boolean processItemOnObject(Player player, ObjectKey key, Item item) {
+		WorldObject object = super.getObject(key);
         if (item.getId() == 2357 && object.getId() == 2643) {
         	JewllerySmithing.openInterface(player);
         }

@@ -22,7 +22,8 @@ public class MistalinUnderground extends ObjectPlugin {
 
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 29375) {
 			boolean north = player.getY() == 9963 ? true : false;

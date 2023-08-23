@@ -29,7 +29,8 @@ public class GodWarsBoulder extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (player.getSkills().getLevelForXp(Skills.AGILITY) < 60) {
 			player.getDialogueManager().startDialogue("SimpleMessage",
 					"You need at least level 60 agility to clear this obstacle.");

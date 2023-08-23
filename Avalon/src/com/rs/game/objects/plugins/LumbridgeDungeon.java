@@ -28,7 +28,8 @@ public class LumbridgeDungeon extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		int x = object.getX();
 		int y = object.getY();

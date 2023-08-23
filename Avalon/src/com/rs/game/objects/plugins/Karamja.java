@@ -24,7 +24,8 @@ public class Karamja extends ObjectPlugin {
 
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 2083 && object.getX() == 3030 && object.getY() == 3217) {
 			player.setNextWorldTile(new WorldTile(2956, 3146, 0)); // Boat from Port Sarim to Karamja

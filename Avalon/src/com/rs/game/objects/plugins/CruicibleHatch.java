@@ -23,7 +23,8 @@ public class CruicibleHatch extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.getDialogueManager().startDialogue("Marv", true);
 		return true;
 	}

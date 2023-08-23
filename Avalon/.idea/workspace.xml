@@ -10,26 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a08881de-7812-4170-b954-a1fd47c840d7" name="Changes" comment="Fixed Examines">
-      <change afterPath="$PROJECT_DIR$/data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/rs/game/objects/ObjectKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/cache/main_file_cache.dat2" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/main_file_cache.dat2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/cache/main_file_cache.idx255" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/main_file_cache.idx255" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/iplog/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/iplog/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/constants/Locations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/constants/Locations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/constants/objects/Booths.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/constants/objects/Doors.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/constants/objects/Ladders.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/constants/objects/Stairs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/constants/objects/Stalls.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/item/plugins/skilling/Crafting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/item/plugins/skilling/Crafting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/rs/game/npc/NpcScriptHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/npc/NpcScriptHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/ObjectKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/ObjectKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/ObjectPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/ObjectPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/ObjectPluginLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/ObjectPluginLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/AlkharidGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/AlkharidGate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/Alter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/Altar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/AxeHutGate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/AxeHutGate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/BlackKnightFortressEntrance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/BlackKnightFortressEntrance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/BrokenStairsDungeoneering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/BrokenStairsDungeoneering.java" afterDir="false" />
@@ -80,6 +69,8 @@
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/WildernessRifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/WildernessRifts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/WoodcuttingObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/WoodcuttingObjects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/ZMIShortcut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/objects/plugins/ZMIShortcut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rs/game/player/actions/skills/prayer/BoneOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/game/player/actions/skills/prayer/BoneOffering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/rs/net/decoders/handlers/ObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rs/net/decoders/handlers/ObjectHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +99,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2Iy21Hufnu6YudU6xlWnK90dAEh" />
   <component name="ProjectLevelVcsManager">
@@ -132,8 +122,17 @@
       <recent name="com.rs.game.timer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
-    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="9" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Loader" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.rs.Launcher" />
       <module name="Avalon" />
       <extension name="coverage">
@@ -146,17 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Loader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Loader" />
-      <module name="Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Server" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.Loader" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>

@@ -20,7 +20,8 @@ public class KalphiteLairEntrance extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() == 48802)
 			player.setNextWorldTile(new WorldTile(3484, 9510, 2));
 		else
@@ -29,7 +30,8 @@ public class KalphiteLairEntrance extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processItemOnObject(Player player, WorldObject object, Item item) {
+	public boolean processItemOnObject(Player player, ObjectKey key, Item item) {
+		WorldObject object = super.getObject(key);
 		if (item.getId() != 954)
 			return false;
 		player.getInventory().deleteItem(954, 1);

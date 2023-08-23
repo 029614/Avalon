@@ -19,7 +19,8 @@ public class Mill extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (!player.getInventory().containsItem(1931, 1)) {
 			player.getPackets().sendGameMessage("You need an empty pot to fill.");
 			return false;

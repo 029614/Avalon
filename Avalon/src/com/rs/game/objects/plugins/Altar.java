@@ -1,20 +1,37 @@
-//package com.rs.game.objects.impl;
+
+//package com.rs.game.objects.plugins;
 //
-//import com.rs.cache.loaders.ObjectDefinitions;
-//import com.rs.game.Animation;
 //import com.rs.game.WorldObject;
-//import com.rs.game.objects.ObjectScript;
+//import com.rs.game.item.Item;
+//import com.rs.game.objects.ObjectKey;
+//import com.rs.game.objects.ObjectPlugin;
 //import com.rs.game.player.Player;
-//import com.rs.game.player.Skills;
+//import com.rs.game.player.actions.construction.BoneOffering;
+//import com.rs.game.player.actions.skills.prayer.Burying;
+//import com.rs.utils.Logger;
 //
-////TODO: not done - This bugs general alters with other packet uses like itemonObject. leave alone for now
-//public class Alter extends ObjectScript {
+//public class Altar extends ObjectPlugin {
+//    @Override
+//    public ObjectKey[] getKeys() {
+//        ObjectKey[] keys = {
+//                //new ObjectKey(65371, 2947, 3820, 0)
+//        };
+//        return keys;
+//    }
 //
-//	@Override
-//	public Object[] getKeys() {
-//		return new Object[] { 409, 6552, 411, 4859};
-//	}
-//
+//    @Override
+//    public boolean processItemOnObject(Player player, ObjectKey key, Item item) {
+//        WorldObject object = super.getObject(key);
+//        Burying.Bone bone = Burying.Bone.forId(item.getId());
+//        Logger.log("AltarPlugin:processItemOnObject", "processing " + item.getName() + " on " + object.getName());
+//        if (bone != null) {
+//            player.getActionManager().setAction(new BoneOffering(object, bone, 2));
+//            return true;
+//        }
+//        return false;
+//    }
+//}
+
 //	@Override
 //	public int getDistance() {
 //		return 0;

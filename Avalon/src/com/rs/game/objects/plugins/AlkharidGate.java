@@ -24,7 +24,8 @@ public class AlkharidGate extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (player.getX() == 3267 && player.getY() >= 3227 && player.getY() <= 3228)
 			player.getDialogueManager().startDialogue("BorderGuard", 925, object);
 		else
@@ -33,7 +34,8 @@ public class AlkharidGate extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (player.getMoneyPouch().getTotal() < 10 && player.getInventory().getNumberOf(995) < 10) {
 			player.getPackets().sendGameMessage("You must pay a toll of 10 gold coins to pass.");
 			return false;

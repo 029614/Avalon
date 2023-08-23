@@ -19,7 +19,8 @@ public class LumbridgeBasement extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() == 29355 && object.getX() == 3209 && object.getY() == 9616)
 			player.useStairs(828, new WorldTile(3210, 3216, 0), 1, 2);
 		else

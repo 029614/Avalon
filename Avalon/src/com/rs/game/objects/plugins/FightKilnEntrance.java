@@ -23,13 +23,15 @@ public class FightKilnEntrance extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		FightKiln.enterFightKiln(player, false);
 		return true;
 	}
 	
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		FightKiln.enterFightKiln(player, true);
 		return true;
 	}

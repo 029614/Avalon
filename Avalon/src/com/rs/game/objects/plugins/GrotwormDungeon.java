@@ -24,7 +24,8 @@ public class GrotwormDungeon extends ObjectPlugin {
 
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 70794)
 			player.setNextWorldTile(new WorldTile(1340, 6488, 0));

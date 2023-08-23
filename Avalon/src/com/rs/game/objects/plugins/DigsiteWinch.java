@@ -19,7 +19,8 @@ public class DigsiteWinch extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getX() == 3352 && object.getY() == 3417)
 			player.useStairs(832, new WorldTile(3177, 5731, 0), 1, 2);
 		if (object.getX() == 3177 && object.getY() == 5730)

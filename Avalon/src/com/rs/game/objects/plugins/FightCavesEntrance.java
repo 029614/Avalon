@@ -23,7 +23,8 @@ public class FightCavesEntrance extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		FightCaves.enterFightCaves(player);
 		return true;
 	}

@@ -27,7 +27,8 @@ public class CanoeStation extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (player.getTemporaryAttributtes().get("canoe_shaped") != null
 				&& (boolean) player.getTemporaryAttributtes().get("canoe_shaped"))
 			Canoes.openTravelInterface(player, object.getId() - 12163);

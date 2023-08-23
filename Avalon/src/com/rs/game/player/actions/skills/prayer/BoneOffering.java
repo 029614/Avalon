@@ -32,7 +32,12 @@ public class BoneOffering extends Action {
 	@Override
 	public boolean start(Player player) {
 		ticks = player.getInventory().getAmountOf(bone.getId());
-		int slot = HouseConstants.Builds.ALTAR.getSingleHObjectSlot(altar.getId());
+		int slot;
+		if (altar.getId() == 65371) {
+			slot = 6;
+		} else {
+			slot = HouseConstants.Builds.ALTAR.getSingleHObjectSlot(altar.getId());
+		}
 		totalExperience = bone.getExperience() * (slot == -1 ? 4 : ((BASE_ALTAR_PERCENT_BOOST[slot] + (litBurners > 2 ? 2 : litBurners * 0.5))));
 		return true;
 	}

@@ -21,7 +21,8 @@ public class DwarfCannon extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() != 6)
 			DwarfMultiCannon.pickupCannon(player, object.getId() - 6, object, 0);
 		else
@@ -30,7 +31,8 @@ public class DwarfCannon extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		DwarfMultiCannon.pickupCannon(player, 4, object, 0);
 		return true;
 	}

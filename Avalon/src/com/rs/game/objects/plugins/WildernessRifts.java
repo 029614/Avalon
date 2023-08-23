@@ -11,10 +11,10 @@ public class WildernessRifts extends ObjectPlugin {@Override
 
 public ObjectKey[] getKeys() {
 	return new ObjectKey[] {
-			new ObjectKey(65203, -1, -1, 0),
-			new ObjectKey(28782, -1, -1, 0),
-			new ObjectKey(20602, -1, -1, 0),
-			new ObjectKey(20604, -1, -1, 0)
+			new ObjectKey(65203, 3118, 3570, 0),
+			new ObjectKey(28782, 3248, 5490, 0),
+			new ObjectKey(20602, 3019, 3403, 0),
+			new ObjectKey(20604, 2953, 9675, 0)
 	};
 }
 
@@ -24,8 +24,8 @@ public ObjectKey[] getKeys() {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
-		
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		// Entrance from Wilderness Rift
 		if (object.getId() == 65203 && object.getX() == 3118)
 			player.setNextWorldTile(new WorldTile(3247, 5491, 0));

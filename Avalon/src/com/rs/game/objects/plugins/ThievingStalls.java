@@ -11,13 +11,13 @@ public class ThievingStalls extends ObjectPlugin {
 	@Override
 	public ObjectKey[] getKeys() {
 		ObjectKey[] keys = {
-				new ObjectKey(34384, -1, -1, 0),
-				new ObjectKey(34383, -1, -1, 0),
-				new ObjectKey(14011, -1, -1, 0),
-				new ObjectKey(7053, -1, -1, 0),
-				new ObjectKey(34387, -1, -1, 0),
-				new ObjectKey(34386, -1, -1, 0),
-				new ObjectKey(34385, -1, -1, 0),
+				new ObjectKey(34384),
+				new ObjectKey(34383),
+				new ObjectKey(14011),
+				new ObjectKey(7053),
+				new ObjectKey(34387),
+				new ObjectKey(34386),
+				new ObjectKey(34385),
 				//TODO: find out what the hell null is doing here.
 				null // Legacy entry, left in because I'm not sure if it's important.
 		};
@@ -30,7 +30,8 @@ public class ThievingStalls extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		Thieving.handleStalls(player, object);
 		return true;
 	}

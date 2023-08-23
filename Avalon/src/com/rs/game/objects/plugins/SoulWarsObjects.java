@@ -21,7 +21,8 @@ public class SoulWarsObjects extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() == 18425) {
 			NomadsRequiem.enterNomadsRequiem(player);
 			return true;

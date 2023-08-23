@@ -26,7 +26,8 @@ public class AxeHutGate extends ObjectPlugin {
 	}
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (player.getY() == 3962) {
 			AxeHut.GateNorthOut(player, object);
 			return true;
@@ -41,7 +42,8 @@ public class AxeHutGate extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (player.getSkills().getLevelForXp(Skills.THIEVING) < 60) {
 			player.getDialogueManager().startDialogue("SimpleMessage",
 					"You need atleast an level of 60 thieving to picklock this door.");

@@ -44,7 +44,8 @@ public class RunecraftingAltars extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() == 26847) {
 			OuraniaAltar.craftRune(player);
 			return true;

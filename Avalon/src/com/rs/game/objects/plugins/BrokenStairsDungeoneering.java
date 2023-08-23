@@ -18,7 +18,8 @@ public class BrokenStairsDungeoneering extends ObjectPlugin {
 
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.setNextWorldTile(new WorldTile(player.getX(), player.getY() + 2, player.getPlane() - 1));
 		return true;
 	}

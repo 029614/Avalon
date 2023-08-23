@@ -25,7 +25,8 @@ public class DoorsAndGates extends ObjectPlugin {
 
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 1817 && object.getX() == 2273 && object.getY() == 4680) // kbd
 			// lever

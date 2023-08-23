@@ -30,15 +30,16 @@ public class WildernessOthers extends ObjectPlugin {
 				new ObjectKey(12202, -1, -1, 0),
 				new ObjectKey(12230, -1, -1, 0),
 				new ObjectKey(15522, -1, -1, 0),
-				new ObjectKey(38811, -1, -1, 0),
-				new ObjectKey(37929, -1, -1, 0),
-				new ObjectKey(37928, -1, -1, 0),
-				new ObjectKey(38815, -1, -1, 0)
+				new ObjectKey(38811, 2971, 4382, 2),
+				new ObjectKey(37929, 2918, 4382, 2),
+				new ObjectKey(37928, 2883, 4370, 2),
+				new ObjectKey(38815, 3209, 3780, 0)
 		};
 	}
 	
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (WildernessControler.isDitch(id)) {// wild ditch
 			if (((object.getRotation() == 0 || object.getRotation() == 2) && player.getY() < object.getY())
@@ -154,7 +155,8 @@ public class WildernessOthers extends ObjectPlugin {
 	}
 	
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 38811) {// corp beast 
 			player.getCutscenesManager().play("CorporealBeastScene");

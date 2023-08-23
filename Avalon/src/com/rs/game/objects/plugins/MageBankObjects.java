@@ -20,7 +20,8 @@ public class MageBankObjects extends ObjectPlugin {
 
 		
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 2878) {
 			player.message("You jump into the spring and fall into a dark cavern...");

@@ -23,7 +23,8 @@ public class CrystalChestObject extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (!player.getInventory().containsItem(989, 1)) {
 			player.getPackets().sendGameMessage("You need a crystal key to open this chest.");
 			return false;
@@ -33,7 +34,8 @@ public class CrystalChestObject extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processItemOnObject(Player player, WorldObject object, Item item) {
+	public boolean processItemOnObject(Player player, ObjectKey key, Item item) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() != 172)
 			return false;
 		openChest(player, object);

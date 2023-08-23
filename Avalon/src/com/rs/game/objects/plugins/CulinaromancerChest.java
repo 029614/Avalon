@@ -16,19 +16,22 @@ public class CulinaromancerChest extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.getBank().openBank();
 		return true;
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		ShopsHandler.openShop(player, 34);
 		return true;
 	}
 
 	@Override
-	public boolean processObject3(Player player, WorldObject object) {
+	public boolean processObject3(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		ShopsHandler.openShop(player, 34);
 		return true;
 	}

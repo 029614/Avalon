@@ -29,7 +29,8 @@ public class MagicDoorLumbridge extends ObjectPlugin {
 	private static final int DRAMEN_STAFF = 772;
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		DoorsAndGates.handleDoorTemporary(player, object, 1200);
 		CoresManager.fastExecutor.schedule(new TimerTask() {
 

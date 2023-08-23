@@ -14,8 +14,8 @@ public class ZMIShortcut extends ObjectPlugin {
 	@Override
 	public ObjectKey[] getKeys() {
 		return new ObjectKey[]{
-				new ObjectKey(26844, -1, -1, 0),
-				new ObjectKey(26845, -1, -1, 0)
+				new ObjectKey(26844, 3309, 4819, 0),
+				new ObjectKey(26845, 3311, 4818, 0)
 		};
 	}
 
@@ -25,7 +25,8 @@ public class ZMIShortcut extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		FadingScreen.fade(player);
 		player.getAppearence().setRenderEmote(295);
 		player.message("You squeeze through the cracks..");

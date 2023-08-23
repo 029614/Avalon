@@ -20,7 +20,8 @@ public class HamTrapdoor extends ObjectPlugin {
 
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		if (object.getId() == 5493) {
 			player.useStairs(828, new WorldTile(3165, 3251, 0), 1, 2);
 			return true;
@@ -39,13 +40,15 @@ public class HamTrapdoor extends ObjectPlugin {
 	}
 
 	@Override
-	public boolean processObject2(Player player, WorldObject object) {
+	public boolean processObject2(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		player.sendVarBit(object.getConfigByFile(), 0);
 		return true;
 	}
 
 	@Override
-	public boolean processObject5(Player player, WorldObject object) {
+	public boolean processObject5(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		Thieving.pickHamHideout(player, object);
 		return true;
 	}

@@ -190,7 +190,8 @@ public class GlobalStairs extends ObjectPlugin {
 	private static int STAIRSDOWN = 833;
 
 	@Override
-	public boolean processObject(Player player, WorldObject object) {
+	public boolean processObject(Player player, ObjectKey key) {
+		WorldObject object = super.getObject(key);
 		int id = object.getId();
 		if (id == 26849) {
 			player.useStairs(827, new WorldTile(3271, 4861, 0), 1, 2);
